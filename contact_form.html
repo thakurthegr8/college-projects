@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <head>
+    <title>index</title>
+  </head>
+  <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link href="styles/icon_styles.css" rel="stylesheet" />
+  <style>
+    * {
+      font-family: "Poppins", sans-serif;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    /* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+    .svg-icon {
+      width: 1em;
+      height: 1em;
+    }
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+      fill: #fff;
+    }
+
+    .svg-icon circle {
+      stroke: #fff;
+      stroke-width: 1;
+    }
+    /* #form-container {
+      width: 35vw;
+    } */
+    #message {
+      height: 170px;
+      max-height: 170px;
+    }
+    #form-container {
+      height: inherit;
+    }
+  </style>
+
+  <body>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-8 bg-purple-900">
+      <div class="flex flex-col lg:h-screen p-10">
+        <span class="text-3xl text-white font-bold text-opacity-75">
+          API Club
+        </span>
+        <h1 class="text-5xl text-white font-bold block">Get A Quote</h1>
+        <p class="text-xl mt-4 text-white">
+          Fill up the form and our team will get<br />
+          back to you in 24 hours.
+        </p>
+        <iframe
+          src="https://my.spline.design/untitled-c23e550dcf87d2902ae185d764d5ffb8/"
+          frameborder="0"
+          width="100%"
+          height="100%"
+          class="hidden md:block lg:block"
+        ></iframe>
+      </div>
+      <div class="flex justify-center">
+        <div
+          id="form-container"
+          class="py-10 px-8 mx-20 w-full flex h-5/6 flex-col rounded-xl justify-start shadow-md bg-white"
+        >
+          <!-- <span class="text-3xl text-blue-700 font-bold text-center">
+                API Club
+            </span>
+            <h1 class="text-xl text-gray-900 font-bold mt-6">
+                Contact Us
+            </h1> -->
+          <div id="status" class="px-2 py-3 text-center font-bold text-green-800 rounded-xl hidden">
+            Thanks your form successfully submitted!
+          </div>
+          <form
+            id="api-form"
+            class="flex flex-col"
+            action="https://formspree.io/f/mgerweoo"
+            method="post"
+          >
+            <label class="text-gray-800 mt-4" for="name">Name </label>
+            <input
+              class="px-2 py-3 border-2 border-gray-300 rounded-xl outline-none focus:border-blue-600"
+              id="subject"
+              type="text"
+              placeholder="Enter name..."
+              name="name"
+              required
+            />
+            <label class="text-gray-800 mt-4" for="mail">E-mail </label>
+            <input
+              class="px-2 py-3 border-2 border-gray-300 rounded-xl outline-none focus:border-blue-600"
+              id="mail"
+              type="email"
+              placeholder="Enter your mail..."
+              name="mail"
+              required
+            />
+            <label class="text-gray-800 mt-4" for="message">Write to us </label>
+            <textarea
+              class="px-2 py-3 border-2 border-gray-300 rounded-xl h-5/6 outline-none focus:border-blue-600"
+              id="message"
+              type="text"
+              placeholder="Enter your message..."
+              name="message"
+              required
+            ></textarea>
+            <div class="grid lg:grid-cols-2">
+              <div></div>
+              <button
+                class="text-white text-center rounded-xl bg-gray-900 text-base mx-2 px-10 py-2 mt-4 focus:outline-none focus:text-white focus:bg-gray-800"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("api-form");
+        var status = document.getElementById("status");
+        function success() {
+          form.reset();
+          status.classList.remove("hidden");
+          status.classList.add("block");
+          status.classList.add("bg-green-200");
+          status.innerHTML = "Thanks, Your response was submitted!";
+        }
+        function error() {
+          status.classList.remove("hidden");
+          status.classList.add("block");
+          status.innerHTML = "Oops, there was a problem!";
+        }
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+        });
+      });
+      function ajax(method,url,data,success,error){
+        var xhr = new XMLHttpRequest();
+        xhr.open(method,url);
+        xhr.setRequestHeader("Accept","application/json");
+        xhr.onreadystatechange = function(){
+          if(xhr.readyState !== XMLHttpRequest.DONE) return;
+          if(xhr.status === 200){
+          success(xhr.response, xhr.responseType);
+          }
+        else{
+          error(xhr.status,xhr.response,xhr.responseType);
+        }
+      };
+      xhr.send(data);
+      }
+    </script>
+  </body>
+</html>
