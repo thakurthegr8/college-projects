@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale = 1" />
+    <title>Home</title>
+  </head>
+  <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link href="styles/icon_styles.css" rel="stylesheet" />
+  <style>
+    * {
+      font-family: "Poppins", sans-serif;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+
+    /* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+    .svg-icon {
+      width: 1em;
+      height: 1em;
+    }
+
+    .svg-icon path,
+    .svg-icon polygon,
+    .svg-icon rect {
+      fill: #fff;
+    }
+
+    .svg-icon circle {
+      stroke: #fff;
+      stroke-width: 1;
+    }
+    /* #form-container {
+      width: 35vw;
+    } */
+    #message {
+      height: 170px;
+      max-height: 170px;
+    }
+    #form-container {
+      height: inherit;
+    }
+    .dlt-btn {
+      background-color: rgb(247, 60, 60);
+      padding: 2px 5px;
+      outline-color: transparent;    
+      color: white;
+      border-radius: 100px;
+    }
+    .read-btn{
+        background-color: rgb(33, 156, 64);
+      padding: 2px 6px;
+      outline-color: transparent;       
+      color: white;
+      border-radius: 100px; 
+    }
+    #body{
+        height: 75%;
+    }
+  </style>
+  <body>
+    <div
+      class="container flex flex-col justify-start fixed top-0 right-0 left-0 bottom-0 mx-auto p-6 h-screen overflow-y-scroll hidden"
+      id="blog-maker"
+    >
+      <input
+        class="p-2 focus:outline-none text-3xl font-bold"
+        type="text"
+        id="subject"
+        name="subject"
+        placeholder="Subject..."
+        required
+      />
+      <input
+        class="p-2 focus:outline-none text-xl font-bold"
+        type="text"
+        id="topic"
+        placeholder="Topic..."
+        required
+      />
+      <textarea
+        class="px-2 py-4 focus:outline-none text-md h-screen"
+        type="text"
+        id="body"
+        placeholder="Write Something..."
+        required
+      ></textarea>
+      <div>
+        <button
+          class="bg-blue-800 text-white rounded px-6 py-2"
+          id="submit-btn"
+        >
+          Submit
+        </button>
+        <button
+          class="bg-red-500 text-white rounded px-6 py-2"
+          id="reset-fields-btn"
+        >
+          Reset All
+        </button>
+      </div>
+    </div>
+    <div id="tabs" class="container mx-auto grid grid-auto-flow grid-cols-1 lg:grid-cols-3 gap-10 p-10">
+        <!-- <div class="border-2 border-gray-400 rounded-xl p-6 transition overflow-hidden">
+            <h1 class="text-3xl font-bold text-gray-900">${valuesArr[i].subject}</h1>
+            <h2 class="text-md text-blue-600">${valuesArr[i].topic}</h2>
+            <div class="mt-4">
+            <button class="dlt-btn">Delete</button>
+                <button class="read-btn">Read</button>
+                </div>
+        </div> -->
+            </div>
+    <button
+      id="blog-edit-toggle"
+      class="bg-blue-800 text-white rounded-full p-6 fixed bottom-5 right-5 focus:outline-none focus:bg-black transition"
+    >
+      <img
+        class="w-6 h-6"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ0OCA0NDgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTQwOCAxODRoLTEzNmMtNC40MTc5NjkgMC04LTMuNTgyMDMxLTgtOHYtMTM2YzAtMjIuMDg5ODQ0LTE3LjkxMDE1Ni00MC00MC00MHMtNDAgMTcuOTEwMTU2LTQwIDQwdjEzNmMwIDQuNDE3OTY5LTMuNTgyMDMxIDgtOCA4aC0xMzZjLTIyLjA4OTg0NCAwLTQwIDE3LjkxMDE1Ni00MCA0MHMxNy45MTAxNTYgNDAgNDAgNDBoMTM2YzQuNDE3OTY5IDAgOCAzLjU4MjAzMSA4IDh2MTM2YzAgMjIuMDg5ODQ0IDE3LjkxMDE1NiA0MCA0MCA0MHM0MC0xNy45MTAxNTYgNDAtNDB2LTEzNmMwLTQuNDE3OTY5IDMuNTgyMDMxLTggOC04aDEzNmMyMi4wODk4NDQgMCA0MC0xNy45MTAxNTYgNDAtNDBzLTE3LjkxMDE1Ni00MC00MC00MHptMCAwIiBmaWxsPSIjZmZmZmZmIiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIj48L3BhdGg+PC9nPjwvc3ZnPg=="
+      />
+    </button>
+    <div class="flex flex-col bg-white p-6 fixed right-0 left-0 top-0 bottom-0 hidden" id="blog-details">
+        <div>
+        <button id="close-blog-details" class="bg-red-800 text-white rounded-full p-2 focus:outline-none focus:bg-black transition">Close</button>
+    </div>
+        <h1 class="text-3xl font-bold text-gray-900 mt-4" id="blog-details-subject">${valuesArr[i].subject}</h1>
+        <h2 class="text-md text-blue-600" id="blog-details-topic">${valuesArr[i].topic}</h2>
+        <p class="text-base text-blue-gray" id="blog-details-body">Hellow world</p>
+    </div>
+  </body>
+  <script>
+    var subjectValue = document.querySelector("#subject");
+    var topicValue = document.querySelector("#topic");
+    var bodyValue = document.querySelector("#body");
+    var submitValues = document.querySelector("#submit-btn");
+    var tabs = document.querySelector("#tabs");
+    var blogMaker = document.querySelector("#blog-maker");
+    var blogToggle = document.querySelector("#blog-edit-toggle");
+    var rsetFields = document.querySelector("#reset-fields-btn");
+    var blogDetails = document.querySelector("#blog-details");
+    var blogDetailsToggle = document.querySelector("#close-blog-details");
+    blogDetailsToggle.addEventListener("click",() => {
+        blogDetailsVisibility(true);
+    },false);
+    function blogDetailsVisibility(visible){
+        if(visible){
+            blogDetails.classList.add("hidden");
+        }else{
+            blogDetails.classList.remove("hidden");
+        }
+    }
+    submitValues.addEventListener("click", getPersonValues, false);
+    rsetFields.addEventListener("click",resetFields,false);
+    var blogMakerisOpen = true;
+    var valuesArr = [];
+    blogToggle.addEventListener(
+      "click",
+      () => {
+        if (blogMakerisOpen) {
+          blogMaker.classList.add("hidden");
+          blogToggle.classList.remove("transform");
+          blogToggle.classList.remove("rotate-45");
+          blogMakerisOpen = !blogMakerisOpen;
+        } else {
+          blogMaker.classList.remove("hidden");
+          blogToggle.classList.add("transform");
+          blogToggle.classList.add("rotate-45");
+          blogMakerisOpen = !blogMakerisOpen;
+        }
+      },
+      false
+    );
+    function flushTab() {
+      tabs.innerHTML = "";
+    }
+    function dltSelected(index) {
+      valuesArr.splice(index, 1);
+      if(valuesArr.length == 0){
+          appendEmptyTabMsg(true);
+      }else{
+          flushTab();
+          createTabAfterDlt();
+      }
+      if (valuesArr.length > 0) {
+        allowDelete();
+      }
+      console.log(valuesArr);
+    }
+    function dltSelectedAddEvent(item, index) {
+      item.addEventListener(
+        "click",
+        function () {
+          dltSelected(index);
+        },
+        false
+      );
+    }
+    function showBlogDetails(item, index) {
+      item.addEventListener(
+        "click",
+        function () {
+            //   console.log(`Showing blog ${index}`);
+            document.querySelector("#blog-details > h1").innerText = valuesArr[index].subject;
+            document.querySelector("#blog-details > h2").innerText = valuesArr[index].topic;
+            document.querySelector("#blog-details > p").innerText = valuesArr[index].body;
+            blogDetailsVisibility(false);
+        },
+        false
+      );
+    }
+    function allowDelete() {
+      document.querySelectorAll(".dlt-btn").forEach(dltSelectedAddEvent);
+    }
+    function allowRead() {
+      document.querySelectorAll(".read-btn").forEach(showBlogDetails);
+    }
+    function pushPersonValues(subject, topic, body) {
+      var personValues = new Object();
+      personValues.subject = subject;
+      personValues.topic = topic;
+      personValues.body = body;
+      valuesArr.push(personValues);
+      console.log(valuesArr);
+      flushTab();
+      valuesArr.forEach(createtab);
+      if (valuesArr.length > 0) {
+        allowDelete();
+        allowRead();
+        
+      }
+    }
+    function createtab(item, index) {
+      tabs.innerHTML += ` <div class="border-2 border-gray-400 rounded-xl p-6 transition overflow-hidden">
+            <h1 class="text-3xl font-bold text-gray-900">${item.subject}</h1>
+            <h2 class="text-md text-blue-600">${item.topic}</h2>
+            <div class="mt-4">
+            <button class="dlt-btn">Delete</button>
+                <button class="read-btn">Read</button>
+                </div>
+        </div>`;
+    }
+    function createTabAfterDlt() {
+      for (var i = 0; i < valuesArr.length; i++) {
+        tabs.innerHTML += ` <div class="border-2 border-gray-400 rounded-xl p-6 transition overflow-hidden">
+            <h1 class="text-3xl font-bold text-gray-900">${valuesArr[i].subject}</h1>
+            <h2 class="text-md text-blue-600">${valuesArr[i].topic}</h2>
+            <div class="mt-4">
+            <button class="dlt-btn">Delete</button>
+                <button class="read-btn">Read</button>
+                </div>
+        </div>`;
+      }
+    }
+    function getPersonValues() {
+      subjectVal = subjectValue.value.toString();
+      topicVal = topicValue.value.toString();
+      bodyVal = bodyValue.value.toString();
+      if (subjectVal.length * topicVal.length * bodyVal.length != 0) {
+        pushPersonValues(subjectVal, topicVal, bodyVal);
+        resetFields();
+        blogMaker.classList.add("hidden");
+        blogToggle.classList.remove("transform");
+        blogToggle.classList.remove("rotate-45");
+      }
+    }
+    function resetFields() {
+      subjectValue.value = "";
+      topicValue.value = "";
+      bodyValue.value = "";
+    }
+    function appendEmptyTabMsg(visible){
+        if(visible){
+            tabs.innerHTML = `<div></div><div class="flex flex-col justify-center items-center"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0yMS41IDIyaC0xOWMtMS4zNzggMC0yLjUtMS4xMjEtMi41LTIuNXYtN2MwLS4wNy4wMTUtLjE0MS4wNDQtLjIwNWwzLjk2OS04LjgyYy40MDQtLjg5NiAxLjI5OS0xLjQ3NSAyLjI4LTEuNDc1aDExLjQxNGMuOTgxIDAgMS44NzYuNTc5IDIuMjggMS40NzVsMy45NjkgOC44MmMuMDI5LjA2NC4wNDQuMTM1LjA0NC4yMDV2N2MwIDEuMzc5LTEuMTIyIDIuNS0yLjUgMi41em0tMjAuNS05LjM5M3Y2Ljg5M2MwIC44MjcuNjczIDEuNSAxLjUgMS41aDE5Yy44MjcgMCAxLjUtLjY3MyAxLjUtMS41di02Ljg5M2wtMy45MjUtOC43MjNjLS4yNDItLjUzNi0uNzc5LS44ODQtMS4zNjgtLjg4NGgtMTEuNDE0Yy0uNTg5IDAtMS4xMjYuMzQ4LTEuMzY4Ljg4NXoiIGZpbGw9IiM3YTc5NzkiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0xNi44MDcgMTdoLTkuNjE0Yy0uNjIyIDAtMS4xODYtLjM5MS0xLjQwNC0uOTczbC0xLjAxNC0yLjcwM2MtLjA3Mi0uMTk0LS4yNi0uMzI0LS40NjgtLjMyNGgtMy41NTdjLS4yNzYgMC0uNS0uMjI0LS41LS41cy4yMjQtLjUuNS0uNWgzLjU1N2MuNjIyIDAgMS4xODYuMzkxIDEuNDA1Ljk3M2wxLjAxMyAyLjcwM2MuMDczLjE5NC4yNjEuMzI0LjQ2OC4zMjRoOS42MTNjLjIwOCAwIC4zOTYtLjEzLjQ2OC0uMzI0bDEuMDEzLTIuNzAzYy4yMi0uNTgyLjc4NC0uOTczIDEuNDA2LS45NzNoMy44MDdjLjI3NiAwIC41LjIyNC41LjVzLS4yMjQuNS0uNS41aC0zLjgwN2MtLjIwOCAwLS4zOTYuMTMtLjQ2OC4zMjRsLTEuMDEzIDIuNzAzYy0uMjE5LjU4Mi0uNzg0Ljk3My0xLjQwNS45NzN6IiBmaWxsPSIjN2E3OTc5IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+PC9nPjwvc3ZnPg==" /><h1 class="text-3xl font-bold text-gray-600">There is nothing here</h1></div><div></div>`;
+        }
+    }
+    window.addEventListener("load",()=>{
+        appendEmptyTabMsg(true);
+    },false);
+  </script>
+</html>
