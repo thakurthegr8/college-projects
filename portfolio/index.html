@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Portfolio name | Designation</title>
+</head>
+<style>
+    body{
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+    @font-face{
+        font-family: integralCF;
+        src:url("fonts/IntegralCF-Regular.otf");
+    }
+    @font-face{
+        font-family: integralCFB;
+        src:url("fonts/IntegralCF-Bold.otf");
+    }
+   
+    h1,h2{
+        font-family: integralCFB;
+    }
+    body > header > div > a > span{
+        font-family: integralCF;
+    }
+    body > header > div > nav > a{
+        font-family: integralCF;
+    }
+    button{
+        font-family: integralCF;
+    }
+    body > section:nth-child(2){
+        background-image: url("images/headerBg.svg");
+        background-size: cover;
+        background-position: center center;
+    }
+    .logo{
+      font-family: integralCF;
+    }
+    #works > div {
+      min-height: 50vh;
+      background-position: center center;
+      background-size: cover;
+    }
+    body > footer > div.bg-black > div > a > span{
+      font-family: integralCF;
+    }
+</style>
+<body>
+    <!--navbar-->
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <div class="flex justify-between items-center w-full md:w-auto">
+          <a class="logo flex title-font font-medium items-center text-gray-900 ">
+            <span class="ml-3 text-sm md:text-base lg:text-xl">Alice Carter</span>
+          </a>
+          <button class="inline-flex md:hidden items-center text-white bg-black border-0 py-4 px-2 focus:outline-none hover:bg-red-600 rounded text-sm">Subscribe
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+          <nav class="mt-4 md:mt-0 md:ml-auto flex flex-wrap items-center text-sm md:text-base justify-center">
+            <a class="mr-5 hover:text-gray-900" href="index.html">Works</a>
+            <a class="mr-5 hover:text-gray-900" href="contact.html">Contact</a>
+            <a class="mr-5 hover:text-gray-900" href="about.html">About</a>
+          </nav>
+          <button class="hidden md:flex items-center text-white bg-black border-0 py-4 px-3 focus:outline-none hover:bg-red-600 rounded text-base mt-4 md:mt-0">Subscribe
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <!--call to action-->
+      <section class="text-gray-600 body-font md:-mt-12" id="call-to-action">
+        <div class="container mx-auto flex px-5 py-12 md:flex-row flex-col-reverse items-center">
+          <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+            <h1 class="text-3xl md:text-6xl mb-4 font-medium text-black">non-awarded 
+              <br class="hidden lg:inline-block">winning 
+              <br class="hidden lg:inline-block">graphic designer 
+              <blockquote>Alice Carter</blockquote>
+            </h1>
+            <div class="flex justify-center items-center flex-col md:flex-row mt-4 space-y-4 md:space-y-0">
+              <button class="inline-flex text-white bg-black border-0 py-4 px-6 focus:outline-none hover:bg-red-600 rounded-xl text-base">Explore Portfolio</button>
+              <button class="md:ml-4 inline-flex text-red-600 bg-white border-2 border-red-600 py-4 px-6 focus:outline-none hover:bg-red-600 hover:text-white rounded-xl text-base">Slide to works</button>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img class="object-cover object-center rounded" alt="hero" src="images/ctaill.svg">
+          </div>
+        </div>
+      </section>
+      <!--features-->
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap">
+          <div class="flex flex-wrap -mx-4 mt-auto mb-auto lg:w-1/2 sm:w-2/3 content-start sm:pr-10">
+            <div class="w-full sm:p-4 px-4 mb-6">
+              <h1 class="title-font font-medium text-3xl md:text-6xl mb-2 text-black">Design &<br class="hidden lg:inline-block">Draw</h1>
+              
+              <div class="leading-base font-semibold text-black text-xl md:text-3xl opacity-50">I'm a graphic designer based in Poland. Have a look to my best design for
+                the clients all over the world.</div>
+            </div>
+            <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+              <h2 class="title-font font-medium text-3xl text-red-600">2.7K</h2>
+              <p class="leading-relaxed">Users</p>
+            </div>
+            <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+              <h2 class="title-font font-medium text-3xl text-red-600">1.8K</h2>
+              <p class="leading-relaxed">Subscribes</p>
+            </div>
+            <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+              <h2 class="title-font font-medium text-3xl text-red-600">35</h2>
+              <p class="leading-relaxed">Downloads</p>
+            </div>
+            <div class="p-4 sm:w-1/2 lg:w-1/4 w-1/2">
+              <h2 class="title-font font-medium text-3xl text-red-600 ">4</h2>
+              <p class="leading-relaxed">Products</p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 sm:w-1/3 w-full rounded-lg overflow-hidden mt-6 sm:mt-0">
+            <img class="object-cover object-center w-full h-full" src="images/secill.svg" alt="stats">
+          </div>
+        </div>
+      </section>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-row text-center justify-center w-full mb-20 z-10 relative">
+            <h1 class=" text-5xl font-medium title-font mb-4 text-black">Over 2000 Happy Clients</h1>
+            <img src="images/knot.svg" class="w-24 -ml-10 -mt-6 ">
+          </div>
+          <div id="reviews" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!--reviewCard-->
+            </div>
+            <button class="mt-4 inline-flex items-center justify-center text-black bg-yellow-400 border-0 py-4 px-3 focus:outline-none hover:bg-black hover:text-white  rounded text-base">Load More Reviews
+              <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+                <g id="Group_21" data-name="Group 21" transform="translate(-331 -586)">
+                  <circle id="Ellipse_4" data-name="Ellipse 4" cx="19.5" cy="19.5" r="19.5" transform="translate(331 586)" fill="#1a1a1a80"/>
+                  <g id="Group_8" data-name="Group 8" transform="translate(337.093 590.265)">
+                    <circle id="Ellipse_5" data-name="Ellipse 5" cx="3.806" cy="3.806" r="3.806" transform="translate(0.5 11.43)" fill="#fff"/>
+                    <circle id="Ellipse_6" data-name="Ellipse 6" cx="3.806" cy="3.806" r="3.806" transform="translate(9.602 11.43)" fill="#fff"/>
+                    <circle id="Ellipse_7" data-name="Ellipse 7" cx="3.806" cy="3.806" r="3.806" transform="translate(18.703 11.43)" fill="#fff"/>
+                  </g>
+                </g>
+              </svg>
+            </button>
+        </div>
+      </section>
+      <!--Works-->
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-col text-center w-full mb-20">
+            <h1 class=" text-5xl font-medium title-font mb-4 text-black">The Works</h1>
+          </div>
+          <div id="works" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!--work data-->
+          </div>
+          <button class="mt-4 inline-flex items-center justify-center text-white bg-blue-600 border-0 py-4 px-3 focus:outline-none hover:bg-black  rounded text-base ">Load More Reviews
+            <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" width="39" height="39" viewBox="0 0 39 39">
+              <g id="Group_21" data-name="Group 21" transform="translate(-331 -586)">
+                <circle id="Ellipse_4" data-name="Ellipse 4" cx="19.5" cy="19.5" r="19.5" transform="translate(331 586)" fill="#1a1a1a80"/>
+                <g id="Group_8" data-name="Group 8" transform="translate(337.093 590.265)">
+                  <circle id="Ellipse_5" data-name="Ellipse 5" cx="3.806" cy="3.806" r="3.806" transform="translate(0.5 11.43)" fill="#fff"/>
+                  <circle id="Ellipse_6" data-name="Ellipse 6" cx="3.806" cy="3.806" r="3.806" transform="translate(9.602 11.43)" fill="#fff"/>
+                  <circle id="Ellipse_7" data-name="Ellipse 7" cx="3.806" cy="3.806" r="3.806" transform="translate(18.703 11.43)" fill="#fff"/>
+                </g>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </section>
+      <footer class="text-gray-600 body-font">
+        <div class="bg-gray-100 px-5 py-24 ">
+          <div class="flex flex-wrap md:text-left text-center order-first">
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+              <nav class="list-none mb-10">
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Works</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">Contact</a>
+                </li>
+                <li>
+                  <a class="text-gray-600 hover:text-gray-800">About</a>
+                </li>
+              </nav>
+            </div>
+            
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">SUBSCRIBE</h2>
+              <div class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+                  <label for="footer-field" class="leading-7 text-sm text-gray-600">E-mail</label>
+                  <input type="text" id="footer-field" name="footer-field" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <button class="mt-4 lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-black border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded">Subscribe</button>
+              </div>
+              <p class="text-gray-500 text-sm mt-2 md:text-left text-center">Get new updates and notifications 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-black">
+          <div class=" px-5 py-6 flex items-center sm:flex-row flex-col">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+              <span class="ml-3 text-xl text-white">Alice Carter</span>
+            </a>
+            
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+              <a class="text-white">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-white">
+                <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-white">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                </svg>
+              </a>
+              <a class="ml-3 text-white">
+                <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                  <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <script type="text/javascript">
+      const workSection = document.querySelector("#works");
+const workData = [{
+    designDescription:"Hand Design For",
+    designFor:"@EmannuelJosito",
+    design:"i1.png",
+},{
+    designDescription:"bounce at beat",
+    designFor:"@Barbarabonis",
+    design:"bounce.gif",
+},{
+    designDescription:"tea sipping",
+    designFor:"@EmannuelJosito",
+    design:"tea.gif",
+},{
+    designDescription:"Hand Design For",
+    designFor:"@EmannuelJosito",
+    design:"ill4.png",
+},{
+    designDescription:"Parking illustration for",
+    designFor:"@Barbarabonis",
+    design:"ill2.png",
+},{
+    designDescription:"Parking illustration for",
+    designFor:"@Barbarabonis",
+    design:"car.gif",
+}
+];
+
+const cardCss = (imgData)=>{
+    return ` background-image:url("images/${imgData}");`;
+}
+let row = 1;
+let count = 1;
+let ar = ["col-span-0","md:col-span-1 lg:col-span-2"];
+
+const setWorks = (item,index)=>{
+        if((index+1)%2){
+            workSection.innerHTML += ` <div class="flex flex-col rounded ${ar[0]}" style=${cardCss(item.design)}>
+            <div class="flex w-full flex-col rounded justify-end items-start h-full p-6 cursor-pointer opacity-0 hover:opacity-100 transition bg-gradient-to-t from-black ">
+                <div class="flex flex-col ml-4">
+                    <h1 class="text-white text-3xl">${item.designDescription}</h1>
+                    <h1 class="text-green-500 text-base -mt-1 font-semibold">${item.designFor}</h1>
+                </div>
+            </div> 
+        </div>`;
+        }
+        else{
+            workSection.innerHTML += ` <div class="flex flex-col rounded ${ar[1]}" style=${cardCss(item.design)}>
+            <div class="flex w-full flex-col rounded justify-end items-start cursor-pointer h-full p-6 opacity-0 hover:opacity-100 transition bg-gradient-to-t from-black ">
+                <div class="flex flex-col ml-4">
+                    <h1 class="text-white text-3xl">${item.designDescription}</h1>
+                    <h1 class="text-green-500 text-base -mt-1 font-semibold">${item.designFor}</h1>
+                </div>
+            </div> 
+        </div>`;
+        }
+       
+}
+
+workData.forEach((item,index)=>{
+    setWorks(item,index);
+    if(count == 2){
+        ar.reverse();
+        count = 0;
+    }
+    count = count + 1;
+    console.log(ar);
+});
+console.log(workData);
+      </script>
+      <script type="text/javascript">
+      const reviewsSection = document.querySelector("#reviews");
+const verifiedThumbTag = "<img src=\"images/Layer_1.svg\" alt=\"\" class=\"w-6 ml-2\">";
+const reviewData =[{
+    userName :"Marcus Brown",
+    userOrigin:"From Fiverr",
+    isVerified:true,
+    reviewText : "Had an amazing experience with Alice...She is awesome in making designs. She is cooperative and make up to the mark designs exactly what I suggested. Thanks Alice. :-)",
+    reviewTime:"09:50PM",
+    thumbColor:"red",
+    sentFromDevice:"Mobile",
+    verifiedThumb : function(){
+            return this.isVerified?verifiedThumbTag:"";
+    }
+    },
+    {userName :"Lucia grey",
+    userOrigin:"From Fiverr",
+    isVerified:false,
+    reviewText : "Had an amazing experience with Alice...She is awesome in making designs. She is cooperative and make up to the mark designs exactly what I suggested. Thanks Alice. :-)",
+    reviewTime:"09:50PM",
+    thumbColor:"purple",
+    sentFromDevice:"Mobile",
+    verifiedThumb : function(){
+            return this.isVerified?verifiedThumbTag:"";
+        }
+    },
+    {userName :"John Hamilton",
+    userOrigin:"From Fiverr",
+    isVerified:true,
+    reviewText : "Had an amazing experience with Alice...She is awesome in making designs. She is cooperative and make up to the mark designs exactly what I suggested. Thanks Alice. :-)",
+    reviewTime:"08:54PM",
+    thumbColor:"pink",
+    sentFromDevice:"Desktop",
+    verifiedThumb : function(){
+            return this.isVerified?verifiedThumbTag:"";
+        }
+    },{
+    userName :"Lewis Cooper",
+    isVerified:false,
+    reviewText : "Had an amazing experience with Alice...She is awesome in making designs. She is cooperative and make up to the mark designs exactly what I suggested. Thanks Alice. :-)",
+    reviewTime:"09:10PM",
+    thumbColor:"green",
+    sentFromDevice:"Mobile",
+    verifiedThumb : function(){
+            return this.isVerified?verifiedThumbTag:"";
+    }
+}] ;
+
+const setReviews = (item,index)=>{
+    reviewsSection.innerHTML += ` <div class="p-6 border border-gray-500 rounded flex flex-col">
+    <div class="flex flex-row justify-start items-center">
+        <div class="rounded p-4 rounded-full bg-${item.thumbColor}-500 w-12 flex text-center justify-center items-center h-12"><span class="font-bold text-black">${item.userName[0]}</span></div>
+        <div class="flex flex-col ml-4">
+            <h1 class="text-black">${item.userName}</h1>
+            <h1 class="text-gray-500 text-base -mt-1 font-semibold">${item.userOrigin}</h1>
+        </div>
+        ${item.verifiedThumb()}
+    </div>
+    <p class="text-base my-3 font-semibold text-black">
+      ${item.reviewText}
+    </p>
+    <hr class="mt-2">
+    <div class="flex flex-row justify-between items-center text-sm">
+        <span class="text-gray-500 mt-2">${item.reviewTime}</span>
+        <span class="text-gray-500 mt-2">Sent From ${item.sentFromDevice}</span>
+    </div>
+</div>`;
+}
+reviewData.forEach(setReviews);
+console.log(reviewData);
+
+      </script>
+</body>
+</html>
